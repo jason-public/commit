@@ -112,7 +112,7 @@ export default function Hero({ onScrollTo }: HeroProps) {
           <button
             id="hero-scroll-org-btn"
             onClick={() => onScrollTo('org')}
-            className="w-full sm:w-52 py-4 px-6 rounded-2xl bg-[#005BAC] hover:bg-[#005BAC]/90 text-white font-bold text-sm tracking-wide shadow-lg shadow-[#005BAC]/30 active:scale-95 hover:-translate-y-0.5 transition-all duration-250 flex items-center justify-center space-x-2 cursor-pointer"
+            className="hidden md:flex w-full sm:w-52 py-4 px-6 rounded-2xl bg-[#005BAC] hover:bg-[#005BAC]/90 text-white font-bold text-sm tracking-wide shadow-lg shadow-[#005BAC]/30 active:scale-95 hover:-translate-y-0.5 transition-all duration-250 items-center justify-center space-x-2 cursor-pointer"
           >
             <span>조직도 확인하기</span>
             <ArrowRight className="h-4 w-4" />
@@ -121,7 +121,7 @@ export default function Hero({ onScrollTo }: HeroProps) {
           <button
             id="hero-scroll-members-btn"
             onClick={() => onScrollTo('members')}
-            className="w-full sm:w-52 py-4 px-6 rounded-2xl bg-white/10 hover:bg-white/15 text-white font-bold text-sm tracking-wide border border-white/10 backdrop-blur-md active:scale-95 hover:-translate-y-0.5 transition-all duration-250 flex items-center justify-center space-x-2 cursor-pointer"
+            className="w-full sm:w-52 py-4 px-6 rounded-2xl bg-[#005BAC] md:bg-white/10 hover:bg-[#005BAC]/90 md:hover:bg-white/15 text-white font-bold text-sm tracking-wide border border-transparent md:border-white/10 backdrop-blur-md active:scale-95 hover:-translate-y-0.5 transition-all duration-250 flex items-center justify-center space-x-2 cursor-pointer"
           >
             <span>위원 검색 및 조회</span>
           </button>

@@ -128,7 +128,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
             }`}
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
-              {menuItems.map((item) => (
+              {menuItems.filter(item => item.id !== 'org').map((item) => (
                 <button
                   id={`mobile-nav-item-${item.id}-${item.filter || ''}`}
                   key={item.label}

@@ -47,7 +47,7 @@ export default function OrganizationChart({ onSelectDepartment }: OrganizationCh
   ];
 
   return (
-    <section id="org" className="py-24 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
+    <section id="org" className="hidden md:block py-24 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
       {/* Decorative vector shape background */}
       <div className="absolute top-12 left-12 w-64 h-64 rounded-full bg-blue-50/60 blur-2xl pointer-events-none" />
 
