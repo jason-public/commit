@@ -85,10 +85,6 @@ export default function MemberSection({
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <div className="inline-flex items-center space-x-1 px-3 py-1 bg-blue-50 text-[#005BAC] text-xs font-semibold rounded-full mb-3">
-              <User className="h-3.5 w-3.5" />
-              <span>COMMITTEE MEMBERS</span>
-            </div>
             <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
               위원 소개 및 실시간 조회
             </h2>
