@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { Search, Phone, User, RefreshCw, X, SlidersHorizontal, Check } from 'lucide-react';
 import { Member } from '../types';
 import { MEMBERS_DATA } from '../data/members';
@@ -20,6 +20,7 @@ export default function MemberSection({
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCommitteeType, setSelectedCommitteeType] = useState<string>('인수위원단');
   const [selectedDept, setSelectedDept] = useState<string>('전체');
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   // If a forced department filter comes from the Org Chart click, apply it!
   useEffect(() => {
@@ -161,6 +162,9 @@ export default function MemberSection({
                       onClick={() => {
                         setSelectedDept(dept);
                         onClearDeptFilter();
+                        setTimeout(() => {
+                          resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 50);
                       }}
                       className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all duration-150 flex items-center gap-1 border ${
                         isSel
@@ -193,6 +197,9 @@ export default function MemberSection({
             </div>
           )}
         </div>
+
+        {/* Scroll Target */}
+        <div ref={resultsRef} className="scroll-mt-28" />
 
         {/* Dynamic Count Banner */}
         <div className="mb-6 flex items-center justify-between text-slate-500 text-xs px-2 font-medium">
