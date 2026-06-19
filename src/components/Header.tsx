@@ -20,7 +20,6 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
   }, []);
 
   const menuItems = [
-    { label: '위원회 소개', id: 'about' },
     { label: '조직도', id: 'org' },
     { label: '인수위원단', id: 'members', filter: '인수위원단' },
   ];

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import IntroductionSection from './components/IntroductionSection';
 import OrganizationChart from './components/OrganizationChart';
 import MemberSection from './components/MemberSection';
 import MemberDetailModal from './components/MemberDetailModal';
@@ -31,7 +30,7 @@ export default function App() {
     };
 
     const observer = new IntersectionObserver(handleIntersect, observerOptions);
-    const sections = ['hero', 'about', 'org', 'members'];
+    const sections = ['hero', 'org', 'members'];
     
     sections.forEach((id) => {
       const el = document.getElementById(id);
@@ -74,7 +73,6 @@ export default function App() {
       {/* Main sections */}
       <main id="main-content-area">
         <Hero onScrollTo={(id) => handleNavigate(id)} />
-        <IntroductionSection />
         <OrganizationChart onSelectDepartment={handleSelectDepartmentFromChart} />
         <MemberSection
           onOpenDetail={(member) => setSelectedMember(member)}
