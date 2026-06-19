@@ -127,6 +127,30 @@ export default function Hero({ onScrollTo }: HeroProps) {
           </button>
         </motion.div>
 
+        {/* Mobile YouTube Live Button */}
+        <motion.div
+          id="hero-youtube-mobile-container"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.45 }}
+          className="md:hidden mt-4 w-full px-6 flex justify-center"
+        >
+          <a
+            id="youtube-live-btn-mobile"
+            href="https://www.youtube.com/watch?v=Le_GQuRScVI"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full max-w-sm py-3 px-5 bg-[#FF0000]/10 hover:bg-[#FF0000]/25 text-white hover:text-red-400 border border-red-500/30 hover:border-red-500/50 text-xs font-bold rounded-2xl transition-all duration-200 shadow-lg flex items-center justify-center space-x-2 cursor-pointer"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+            </span>
+            <Youtube className="h-4 w-4 text-red-500" />
+            <span>시민주권위원회 업무보고 유튜브 생중계</span>
+          </a>
+        </motion.div>
+
         {/* Operation Principles Label */}
         <motion.div
           id="principles-label"
