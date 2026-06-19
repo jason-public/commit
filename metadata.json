@@ -1,0 +1,6 @@
+{
+  "name": "남양주시 민선9기 시민주권위원회",
+  "description": "남양주시 민선9기 시민주권위원회의 조직과 위원 정보를 확인하고 검색할 수 있는 안내 웹사이트",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
