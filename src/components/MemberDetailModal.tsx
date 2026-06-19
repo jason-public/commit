@@ -132,7 +132,7 @@ export default function MemberDetailModal({ member, onClose }: MemberDetailModal
                     <span>소속 및 담당업무</span>
                   </h4>
                   <p className="mt-1.5 text-sm font-bold text-slate-800 bg-slate-50 rounded-xl p-3 border border-slate-100/60 leading-relaxed">
-                    민선9기 시민주권위원회 <strong className="text-[#005BAC]">{member.department}</strong> 소속으로서 {member.position} 업무를 정기 심의합니다.
+                    민선9기 시민주권위원회 <strong className="text-[#005BAC]">{member.department}</strong> 소속입니다.
                   </p>
                 </div>
 

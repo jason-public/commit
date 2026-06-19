@@ -1,5 +1,5 @@
 import { PRINCIPLES } from '../data/members';
-import { ChevronDown, Sparkles, Award, ArrowRight } from 'lucide-react';
+import { ChevronDown, Sparkles, Award, ArrowRight, Youtube } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface HeroProps {
@@ -135,10 +135,26 @@ export default function Hero({ onScrollTo }: HeroProps) {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="hidden md:block mt-16 w-full text-left max-w-4xl"
         >
-          <h2 className="text-xs font-bold uppercase tracking-widest text-[#00A6D6] border-b border-white/10 pb-2 mb-4 flex items-center space-x-1.5">
-            <Award className="h-4 w-4" />
-            <span>민선9기 시민주권위원회 5대 운영 기틀</span>
-          </h2>
+          <div className="border-b border-white/10 pb-2 mb-4 flex items-center justify-between">
+            <h2 className="text-xs font-bold uppercase tracking-widest text-[#00A6D6] flex items-center space-x-1.5">
+              <Award className="h-4 w-4" />
+              <span>민선9기 시민주권위원회 5대 운영 기틀</span>
+            </h2>
+            <a
+              id="youtube-live-btn"
+              href="https://www.youtube.com/watch?v=Le_GQuRScVI"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-[#FF0000]/10 hover:bg-[#FF0000]/25 text-white hover:text-red-400 border border-red-500/30 hover:border-red-500/50 text-xs font-bold rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-lg active:scale-95 cursor-pointer"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+              </span>
+              <Youtube className="h-4 w-4 text-red-500" />
+              <span>시민주권위원회 업무보고 유튜브 생중계</span>
+            </a>
+          </div>
 
           {/* Pill Badges Grid */}
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
