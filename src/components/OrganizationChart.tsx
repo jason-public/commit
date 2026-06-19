@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Network, ZoomIn, ZoomOut, RotateCcw, HelpCircle, ArrowRight, UserCheck } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -10,9 +10,34 @@ export default function OrganizationChart({ onSelectDepartment }: OrganizationCh
   const [zoomScale, setZoomScale] = useState<number>(1);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    // Responsively set initial zoom scale on mount for mobile/tablet screens
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 640) {
+        setZoomScale(0.65);
+      } else if (window.innerWidth < 1024) {
+        setZoomScale(0.8);
+      } else {
+        setZoomScale(1);
+      }
+    }
+  }, []);
+
   const handleZoomIn = () => setZoomScale((prev) => Math.min(prev + 0.1, 1.4));
-  const handleZoomOut = () => setZoomScale((prev) => Math.max(prev - 0.1, 0.7));
-  const handleResetZoom = () => setZoomScale(1);
+  const handleZoomOut = () => setZoomScale((prev) => Math.max(prev - 0.1, 0.4));
+  const handleResetZoom = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 640) {
+        setZoomScale(0.65);
+      } else if (window.innerWidth < 1024) {
+        setZoomScale(0.8);
+      } else {
+        setZoomScale(1);
+      }
+    } else {
+      setZoomScale(1);
+    }
+  };
 
   const divisions = [
     { name: '기획자치분과', label: '곽소녕, 김경미, 권용식 위원 (3명)', color: 'border-cyan-500 bg-cyan-50/50 hover:bg-cyan-50 text-cyan-900' },
@@ -162,7 +187,7 @@ export default function OrganizationChart({ onSelectDepartment }: OrganizationCh
                     >
                       <UserCheck className="h-4 w-4 mb-2 opacity-70" />
                       <h4 className="text-sm font-bold tracking-tight">{div.name}</h4>
-                      <p className="text-[11px] opacity-80 font-light mt-1 whitespace-nowrap">{div.label}</p>
+                      <p className="text-[11px] opacity-80 font-light mt-1 whitespace-normal break-keep leading-relaxed max-w-[160px] mx-auto">{div.label}</p>
                       
                       <div className="mt-4 flex items-center text-[10px] font-bold text-blue-600 gap-1 opacity-0 hover:opacity-100 sm:opacity-100 transition-opacity">
                         <span>위원 조회</span>
