@@ -133,7 +133,7 @@ export default function Hero({ onScrollTo }: HeroProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 w-full text-left max-w-4xl"
+          className="hidden md:block mt-16 w-full text-left max-w-4xl"
         >
           <h2 className="text-xs font-bold uppercase tracking-widest text-[#00A6D6] border-b border-white/10 pb-2 mb-4 flex items-center space-x-1.5">
             <Award className="h-4 w-4" />
